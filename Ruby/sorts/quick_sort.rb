@@ -15,7 +15,3 @@ class Array
     left.quick_sort!(&prc) + [pivot] + right.quick_sort!(&prc)
   end
 end
-
-
-
-p [0,1,5,2,6,8,1,55,1].quick_sort!
