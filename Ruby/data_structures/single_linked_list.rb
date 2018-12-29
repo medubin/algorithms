@@ -2,7 +2,7 @@ class Link
   attr_accessor :value, :next
   def initialize(value = nil)
     @value = value
-    @next = nils
+    @next = nil
   end
 
 
