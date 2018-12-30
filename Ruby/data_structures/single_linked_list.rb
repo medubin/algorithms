@@ -1,38 +1,29 @@
-class Link
+class Node
   attr_accessor :value, :next
   def initialize(value = nil)
     @value = value
     @next = nil
   end
+end
 
+class SingleLinkedList
+  attr_reader :tail, :head
 
-  class LinkedList
-    attr_reader :tails, :head
-    def initialize
-      @head = nil
-      @tail = nil
-    end
+  def initialize
+    @tail = nil
+    @head = nil
+  end
 
-    def head
-      @head
-    end
+  def push(node)
+    @head = node if @head.nil?
+    @tail.next = node if !@tail
+    @tail = node
+  end
 
-    def tail
-      @tail
-    end
-
-    def push(node)
-      @head = node if @head.nil?
-      node.next = @tail
-      @tail = node
-    end
-
-    def shift
-      old_head = @head
-      @head = @head.next
-      old_head.next = nil
-      @tail = nil if @head == @tail
-      old_head
-    end
+  def shift
+    old_head = @head
+    @head = @head.next
+    old_head.next = nil
+    old_head
   end
 end
