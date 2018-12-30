@@ -16,7 +16,7 @@ class SingleLinkedList
 
   def push(node)
     @head = node if @head.nil?
-    @tail.next = node if !@tail
+    @tail.next = node if @tail
     @tail = node
   end
 
